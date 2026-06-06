@@ -1,10 +1,9 @@
-# bookstore-database-project
+#bookstore-database-project
 
 ## CONTENTS PAGE
 
 *_#1. What is the project about?_*
 *_#2.
-
 
 ##*1. What is the project about?*
 
@@ -25,10 +24,21 @@ This diagram enables us to better grasp the core architecture structure and, com
 After implementing, there have been numerous entries added into the database tables.
 It also features a few queries that are enough for the intention of this project.
 
-**The README.md** file contains my documentation of this project, where every choice that has been made will be explained such that everything will make sense for the reader.
+**The README.md** file contains the documentation of this project, where every choice that has been made will be explained such that everything will make sense for the reader.
 
-##2. 
+##*2. The Entity-Relationship Diagram*
 
+<ins>*Entities[17]*</ins>
+  - _Store_User_ - **Entity which represents a platform user**
+  - _User_Role_  - **Entity which represents a platform role**
+  - _Permission_ - **Entity which represents a permission**
+  - _Role_Permission_ - **Entity which represents the link between a role and a permission**
+
+<ins>*Attributes[14]*</ins>
+-       _Store_User[8]_  : user_id[PRIMARY], address(country, state, zip_code, city, street, apt), email;
+-        _User_Role[3]_  : role_id[PRIMARY], role_name, description_text;
+-       _Permission[3]_  : permission_id[PRIMARY], permission_name, description_text;
+-  _Role_Permission[2]_  : 
 
 
 
