@@ -3,7 +3,9 @@
 ## CONTENTS PAGE
 
 *_#1. What is the project about?_*
-  _Features_
+  -<ins>_Features_</ins>
+  -<ins>_Every File Explained_</ins>
+*_#2.
 
 
 ##1. What is the project about?
@@ -15,6 +17,8 @@ It contains 3 files:
   - **Entity-Relationship DIAGRAM.png**
   - **book_store.sql**
   - **README.md**
+
+<ins>Every File Explained</ins>
 
 **The Entity-Relationship Diagram** contains the corresponding _entities_, _attributes_, and _relationships between entities_ such that it accurately resembles the created database schema.
 This diagram enables us to better grasp the core architecture structure and, combined with the *README file*, understand the underlying reasons for each specific choice.
