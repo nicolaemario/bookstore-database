@@ -58,7 +58,7 @@ Their necessity is linked to the need of being able to *add payment methods, ord
 
 **Complaint-Related:**
 -       _Complaint_Type_   - **Entity which represents types of complains tailored for user problems**
--       _Complaint_Status_ - **Entity which represents types of statuses that complaints go through before or after being ansewered**
+-       _Complaint_Status_ - **Entity which represents types of statuses that complaints go through before or after being answered**
 -       _Complaint_        - **Entity which represents a complaint made by a user**
 
 >>>>>>>>>>>TO EDIT>>>>>>>>>>>>>>>>>>> Their necessity... **TO BE CONTINUED**
