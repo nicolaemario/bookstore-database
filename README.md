@@ -1,6 +1,6 @@
-#bookstore-database-project
+##bookstore-database-project
 
-## CONTENTS PAGE
+# CONTENTS PAGE
 
 *_#1. What is the project about?_*
 *_#2.
@@ -29,16 +29,23 @@ It also features a few queries that are enough for the intention of this project
 ##*2. The Entity-Relationship Diagram*
 
 <ins>*Entities[17]*</ins>
-  - _Store_User_ - **Entity which represents a platform user**
-  - _User_Role_  - **Entity which represents a platform role**
-  - _Permission_ - **Entity which represents a permission**
-  - _Role_Permission_ - **Entity which represents the link between a role and a permission**
+
+**User-Related AND Role-Related**:
+  -     _Store_User_ - **Entity which represents a platform user**
+  -     _User_Role_  - **Entity which represents a platform role**
+  -     _Permission_ - **Entity which represents a permission**
+  -     _Role_Permission_ - **Entity which represents the link between a role and a permission**
+
+Their necessity is linked to the need of being able to *save users, roles, and have a permission-based access system across the platform*.
 
 <ins>*Attributes[14]*</ins>
--       _Store_User[8]_  : user_id[PRIMARY], address(country, state, zip_code, city, street, apt), email;
--        _User_Role[3]_  : role_id[PRIMARY], role_name, description_text;
--       _Permission[3]_  : permission_id[PRIMARY], permission_name, description_text;
--  _Role_Permission[2]_  : 
+
+User-Related AND Role-Related:
+-          _Store_User[8]_  : user_id[PRIMARY], address(country, state, zip_code, city, street, apt), email;
+-           _User_Role[3]_  : role_id[PRIMARY], role_name, description_text;
+-          _Permission[3]_  : permission_id[PRIMARY], permission_name, description_text;
+-     _Role_Permission[2]_  : role_id [PRIMARY], permission_id[PRIMARY];
+-     
 
 
 
