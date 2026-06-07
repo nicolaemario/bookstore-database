@@ -106,6 +106,7 @@ Their necessity is linked to the user/customer need of writing and sending compl
 - ` Participation: - User_Role: Partial; Role_Permission : Total`
 
 **A User_Role** _gets permissions through_ **Many Role_Permission Entities**,
+
 **A Role_Permission Entity** *can give permissions through itself to **Many Roles**.
 
 - `Permission <---> Role_Permission, `
@@ -113,9 +114,11 @@ Their necessity is linked to the user/customer need of writing and sending compl
 - ` Participation: - Permission: Partial; Role_Permission : Total`
 
 **A Permission** _is given to roles through_ **Many Role_Permission Entities**,
-**A Role_Permission Entity** *can give **Many Permissions**.
 
-**NOTE:** *Role_Permission* is an entity which connects _User_Roles_ with _Permissions_, therefore the relationship between _User Roles_ and _Role Permissions_ is inferred by the help of this perspective.
+**A Role_Permission Entity** can give **Many Permissions**.
+
+
+**IMPORTANT NOTE:** *Role_Permission* is an entity which connects _User_Roles_ with _Permissions_, therefore the relationship between _User Roles_ and _Role Permissions_ is inferred by the help of this perspective.
 
 **Product-Related:**
 
