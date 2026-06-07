@@ -92,7 +92,19 @@ Their necessity is linked to the user/customer need of writing and sending compl
 
 <ins>*Relationships[] :*</ins>
 
+- ` Store_User <---> User_Role, `
+- `Cardinality:  Many-to-One (M:1),`
+- `Participation: - Store_User: Total; User_Role : Partial`
+
+**A Store_User** _can have **Many User_Roles**; **A User_Role** can be had by **Many Users**.
+
 **User-Related AND Role-Related:**
+
+- ` User_Role <---> Role_Permission, `
+- `Cardinality:  Many-to-Many (M:N),`
+- `Participation: - User_Role: Partial; Role_Permission : Total`
+
+**A User_Role** _gets permissions through_ **Many Role_Permission Entities**; **A Role_Permission Entity** *can give permissions through itself to **Many Roles**.
 
 **Product-Related:**
 
