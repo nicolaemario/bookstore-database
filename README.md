@@ -61,9 +61,9 @@ Their necessity is linked to the need of being able to *add payment methods, ord
 -       _Complaint_Status_ - **Entity which represents types of statuses that complaints go through before or after being answered**
 -       _Complaint_        - **Entity which represents a complaint made by a user**
 
->>>>>>>>>>>TO EDIT>>>>>>>>>>>>>>>>>>> Their necessity... **TO BE CONTINUED**
+Their necessity is linked to the user/customer need of writing and sending complaints regarding personal problems faced during their experience with the platform and/or the business.
 
-<ins>*Attributes[26] :*</ins>
+<ins>*Attributes[66] :*</ins>
 
 **User-Related AND Role-Related:**
 -            _Store_User[8]_    : user_id[PRIMARY], address(country, state, zip_code, city, street, apt), email;
@@ -79,15 +79,13 @@ Their necessity is linked to the need of being able to *add payment methods, ord
 -           _Audio_Genre[2]_    : audio_genre_id[PRIMARY], audio_genre_name;
 -         _Audio_Details[7]_    : product_id[PRIMARY], artist, audio_genre_id, audio_year, minutes, seconds, tempo;
 
->>>>>>>>>>>>>>>>>>>>>>>TO EDIT
-**Order-Related:**
--       _Order_Payment_         : **Entity which represents the available payment methods for paying orders**
--       _Order_Status_          : **Entity which represents the various statuses which orders have while they go through the process of order**
--       _Store_Order_           : **Entity which represents an order placed by a customer**
--       _Ordered_Item_          : **Entity which links items with orders and adds more details
+=**Order-Related:**
+-         _Order_Payment[3]_    : payment_type_id[PRIMARY], payment_type, description_text;
+-          _Order_Status[3]_    : status_id[PRIMARY], status_name, description_text;
+-           _Store_Order[5]_    : order_date, order_id[PRIMARY], user_id, payment_type_id, status_id;
+-          _Ordered_Item[3]_    : order_id[PRIMARY], product_id[PRIMARY], quantity; 
 
 **Complaint-Related:**
--       _Complaint_Type_   - **Entity which represents types of complains tailored for user problems**
--       _Complaint_Status_ - **Entity which represents types of statuses that complaints go through before or after being ansewered**
--       _Complaint_        - **Entity which represents a complaint made by a user**
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+-        _Complaint_Type[3]_    : complaint_type_id[PRIMARY], complaint_name, description_text;
+-      _Complaint_Status[3]_    : status_id[PRIMARY], status_name, description_text;
+-             _Complaint[6]_    : complaint_id[PRIMARY], complaint_type,id, user_id, complaint_title, complaint_message, status_id;
