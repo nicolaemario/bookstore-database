@@ -94,33 +94,52 @@ Their necessity is linked to the user/customer need of writing and sending compl
 
 **User-Related AND Role-Related:**
 
-- `Store_User <---> User_Role, `
-- ` Cardinality:  Many-to-One (M:1),`
-- ` Participation: - Store_User: Total; User_Role : Partial`
+- ` Store_User <---> User_Role, `
+- ` Cardinality  : Many-to-One (M:1),`
+- ` Participation: Store_User - Total; User_Role - Partial`
 
-**A Store_User** _can have **Many User_Roles**,
-**A User_Role** can be had by **Many Users**.
+**A Store_User** _can have_ **Many User_Roles**,
+**A User_Role** _can be had by_ **Many Users**.
 
-- `User_Role <---> Role_Permission, `
-- ` Cardinality:  Many-to-Many (M:N),`
-- ` Participation: - User_Role: Partial; Role_Permission : Total`
+- `  User_Role <---> Role_Permission, `
+- ` Cardinality  :  Many-to-Many (M:N),`
+- ` Participation:  User_Role - Partial; Role_Permission - Total`
 
 **A User_Role** _gets permissions through_ **Many Role_Permission Entities**,
 
-**A Role_Permission Entity** *can give permissions through itself to **Many Roles**.
+**A Role_Permission Entity** _can give permissions through itself to_ **Many Roles**.
 
-- `Permission <---> Role_Permission, `
-- ` Cardinality:  Many-to-Many (M:N),`
-- ` Participation: - Permission: Partial; Role_Permission : Total`
+- ` Permission <---> Role_Permission, `
+- ` Cardinality  :  Many-to-Many (M:N),`
+- ` Participation:  Permission - Partial; Role_Permission - Total`
 
 **A Permission** _is given to roles through_ **Many Role_Permission Entities**,
 
-**A Role_Permission Entity** can give **Many Permissions**.
+**A Role_Permission Entity** _can give_ **Many Permissions**.
 
 
-**IMPORTANT NOTE:** *Role_Permission* is an entity which connects _User_Roles_ with _Permissions_, therefore the relationship between _User Roles_ and _Role Permissions_ is inferred by the help of this perspective.
+**IMPORTANT NOTE:** *Role_Permission* is an entity which connects _User_Roles_ with _Permissions_, therefore the relationship between _User Roles_ and _Permissions_ is inferred through the help of this perspective.
 
 **Product-Related:**
+
+- ` Product_Category <---> Catalogue`
+- `       Cardinality  :  Many-to-One (M:1),`
+- `       Participation:  Product_Category - Partial; Catalogue - Total`
+
+**A Product_Category** _categorizes products from_ **Only One Catalogue**,
+
+**The Catalogue** _can have_  **Many Products** _categorized_.
+
+**IMPORTANT NOTE:** _Catalogue_ is the name of the Entity, but it contains the actual _Products_ which are being sold. Therefore, whichever relationship there is between _Catalogue_ and other Entities has implications for each _Product_ as well.
+
+- ` Product_Category <---> Catalogue`
+- `       Cardinality  :  Many-to-One (M:1),`
+- `       Participation:  Product_Category - Partial; Catalogue - Total`
+
+**A Product_Category** _categorizes products from_ **Only One Catalogue**,
+
+**The Catalogue** _can have_  **Many Products** _categorized_.
+
 
 =**Order-Related:**
 
