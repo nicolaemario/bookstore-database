@@ -94,17 +94,28 @@ Their necessity is linked to the user/customer need of writing and sending compl
 
 **User-Related AND Role-Related:**
 
-- ` Store_User <---> User_Role, `
-- `Cardinality:  Many-to-One (M:1),`
-- `Participation: - Store_User: Total; User_Role : Partial`
+- `Store_User <---> User_Role, `
+- ` Cardinality:  Many-to-One (M:1),`
+- ` Participation: - Store_User: Total; User_Role : Partial`
 
-**A Store_User** _can have **Many User_Roles**; **A User_Role** can be had by **Many Users**.
+**A Store_User** _can have **Many User_Roles**,
+**A User_Role** can be had by **Many Users**.
 
-- ` User_Role <---> Role_Permission, `
-- `Cardinality:  Many-to-Many (M:N),`
-- `Participation: - User_Role: Partial; Role_Permission : Total`
+- `User_Role <---> Role_Permission, `
+- ` Cardinality:  Many-to-Many (M:N),`
+- ` Participation: - User_Role: Partial; Role_Permission : Total`
 
-**A User_Role** _gets permissions through_ **Many Role_Permission Entities**; **A Role_Permission Entity** *can give permissions through itself to **Many Roles**.
+**A User_Role** _gets permissions through_ **Many Role_Permission Entities**,
+**A Role_Permission Entity** *can give permissions through itself to **Many Roles**.
+
+- `Permission <---> Role_Permission, `
+- ` Cardinality:  Many-to-Many (M:N),`
+- ` Participation: - Permission: Partial; Role_Permission : Total`
+
+**A Permission** _is given to roles through_ **Many Role_Permission Entities**,
+**A Role_Permission Entity** *can give **Many Permissions**.
+
+**NOTE:** *Role_Permission* is an entity which connects _User_Roles_ with _Permissions_, therefore the relationship between _User Roles_ and _Role Permissions_ is inferred by the help of this perspective.
 
 **Product-Related:**
 
