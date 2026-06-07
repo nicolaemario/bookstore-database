@@ -89,3 +89,13 @@ Their necessity is linked to the user/customer need of writing and sending compl
 -        _Complaint_Type[3]_    : complaint_type_id[PRIMARY], complaint_name, description_text;
 -      _Complaint_Status[3]_    : status_id[PRIMARY], status_name, description_text;
 -             _Complaint[6]_    : complaint_id[PRIMARY], complaint_type,id, user_id, complaint_title, complaint_message, status_id;
+
+<ins>*Relationships[] :*</ins>
+
+**User-Related AND Role-Related:**
+
+**Product-Related:**
+
+=**Order-Related:**
+
+**Complaint-Related:**
