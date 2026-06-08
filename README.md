@@ -209,11 +209,11 @@ Their necessity is linked to the user/customer need of writing and sending compl
 
 **Relationships that connect sections between themselves**
 
-- `    Product <---> Ordered_Item9`
+- `    Product <---> Ordered_Item`
 - ` Cardinality  :  One-to-Many (M:N),`
-- ` Participation:  Complaint - Total; Complaint_Status - Partial;`
+- ` Participation:  Complaint - Partial; Complaint_Status - Total;`
 
-**A Complaint** _has_ **Many Complaint_Statuses (not at once, but in time)**,
-
-**A Complaint_Status** _can be had by_ **Many Complaints**.
-
+**A Product** _has_ **Many Ordered_Item Entities**,
+>>
+**An Ordered_Item Entity** _can be had by_ ****.
+<<
