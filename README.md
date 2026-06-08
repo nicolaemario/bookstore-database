@@ -31,64 +31,64 @@ It also features a few queries that are enough for the intention of this project
 ####<ins>*Entities[17] :*</ins>
 
 **User-Related AND Role-Related:**
-  -     _User_Role_       - **Entity which represents a platform role**
-  -     _Store_User_      - **Entity which represents a platform user**
-  -     _Permission_      - **Entity which represents a permission**
-  -     _Role_Permission_ - **Entity which links roles and permissions**
+  -     User_Role       - **Entity which represents a platform role**
+  -     Store_User      - **Entity which represents a platform user**
+  -     Permission      - **Entity which represents a permission**
+  -     Role_Permission - **Entity which links roles and permissions**
 
 Their necessity is linked to the need of being able to *save users, roles, and have a permission-based access system across the platform*.
 
 **Product-Related:**
-  -     _Product_Category_ - **Entity which represents a product category**
-  -     _Catalogue_        - **Entity which represents a catalogue of products**
-  -     _Book_Genre_       - **Entity which represents a book literary genre**
-  -     _Book_Details_     - **Entity which represents book-related details of a product**
-  -     _Audio_Genre_      - **Entity which represents an audio genre**
-  -     _Audio_Details_    - **Entity which represents audio-related details of a product**
+  -      Product_Category  - **Entity which represents a product category**
+  -      Product           - **Entity which represents a store product**
+  -      Book_Genre        - **Entity which represents a book literary genre**
+  -      Book_Details      - **Entity which represents book-related details of a product**
+  -      Audio_Genre       - **Entity which represents an audio genre**
+  -      Audio_Details     - **Entity which represents audio-related details of a product**
 
 Their necessity is linked to the need of being able to *store specific products, their corresponding categories, and different details about them based on categories*.
 
 **Order-Related:**
--       _Order_Payment_    - **Entity which represents the available payment methods for paying orders**
--       _Order_Status_     - **Entity which represents the various statuses which orders have while they go through the process of order**
--       _Store_Order_      - **Entity which represents an order placed by a customer**
--       _Ordered_Item_     - **Entity which links items with orders and adds more details
+-       Order_Payment    - **Entity which represents the available payment methods for paying orders**
+-       Order_Status     - **Entity which represents the various statuses which orders have while they go through the process of order**
+-       Store_Order      - **Entity which represents an order placed by a customer**
+-       Ordered_Item     - **Entity which links items with orders and adds more details
 
 Their necessity is linked to the need of being able to *add payment methods, order statuses, orders placed by users, and items included in specific orders*.
 
 **Complaint-Related:**
--       _Complaint_Type_   - **Entity which represents types of complains tailored for user problems**
--       _Complaint_Status_ - **Entity which represents types of statuses that complaints go through before or after being answered**
--       _Complaint_        - **Entity which represents a complaint made by a user**
+-       Complaint_Type    - **Entity which represents types of complains tailored for user problems**
+-       Complaint_Status  - **Entity which represents types of statuses that complaints go through before or after being answered**
+-       Complaint         - **Entity which represents a complaint made by a user**
 
 Their necessity is linked to the user/customer need of writing and sending complaints regarding personal problems faced during their experience with the platform and/or the business.
 
 <ins>*Attributes[66] :*</ins>
 
 **User-Related AND Role-Related:**
--            _Store_User[8]_    : user_id[PRIMARY], address(country, state, zip_code, city, street, apt), email;
--             _User_Role[3]_    : role_id[PRIMARY], role_name, description_text;
--            _Permission[3]_    : permission_id[PRIMARY], permission_name, description_text;
--       _Role_Permission[2]_    : role_id [PRIMARY], permission_id[PRIMARY];
+-            Store_User[8]    : user_id[PRIMARY], address(country, state, zip_code, city, street, apt), email;
+-             User_Role[3]    : role_id[PRIMARY], role_name, description_text;
+-            Permission[3]    : permission_id[PRIMARY], permission_name, description_text;
+-       Role_Permission[2]    : role_id [PRIMARY], permission_id[PRIMARY];
 
 **Product-Related:**
--      _Product_Category[2]_    : category_id[PRIMARY}, category_name;
--             _Catalogue[6]_    : product_id[PRIMARY], product_name, category_id, available_stock, unit_price, weight;
--            _Book_Genre[2]_    : book_genre_id[PRIMARY], book_genre_name;
--          _Book_Details[5]_    : product_id[PRIMARY], author, publication_year, book_genre_id, description_text;
--           _Audio_Genre[2]_    : audio_genre_id[PRIMARY], audio_genre_name;
--         _Audio_Details[7]_    : product_id[PRIMARY], artist, audio_genre_id, audio_year, minutes, seconds, tempo;
+-      Product_Category[2]    : category_id[PRIMARY}, category_name;
+-               Product[6]    : product_id[PRIMARY], product_name, category_id, available_stock, unit_price, weight;
+-            Book_Genre[2]    : book_genre_id[PRIMARY], book_genre_name;
+-          Book_Details[5]    : product_id[PRIMARY], author, publication_year, book_genre_id, description_text;
+-           Audio_Genre[2]    : audio_genre_id[PRIMARY], audio_genre_name;
+-         Audio_Details[7]    : product_id[PRIMARY], artist, audio_genre_id, audio_year, minutes, seconds, tempo;
 
 =**Order-Related:**
--         _Order_Payment[3]_    : payment_type_id[PRIMARY], payment_type, description_text;
--          _Order_Status[3]_    : status_id[PRIMARY], status_name, description_text;
--           _Store_Order[5]_    : order_date, order_id[PRIMARY], user_id, payment_type_id, status_id;
--          _Ordered_Item[3]_    : order_id[PRIMARY], product_id[PRIMARY], quantity; 
+-         Order_Payment[3]    : payment_type_id[PRIMARY], payment_type, description_text;
+-          Order_Status[3]   : status_id[PRIMARY], status_name, description_text;
+-           Store_Order[5]    : order_date, order_id[PRIMARY], user_id, payment_type_id, status_id;
+-          Ordered_Item[3]    : order_id[PRIMARY], product_id[PRIMARY], quantity; 
 
 **Complaint-Related:**
--        _Complaint_Type[3]_    : complaint_type_id[PRIMARY], complaint_name, description_text;
--      _Complaint_Status[3]_    : status_id[PRIMARY], status_name, description_text;
--             _Complaint[6]_    : complaint_id[PRIMARY], complaint_type,id, user_id, complaint_title, complaint_message, status_id;
+-        Complaint_Type[3]    : complaint_type_id[PRIMARY], complaint_name, description_text;
+-      Complaint_Status[3]    : status_id[PRIMARY], status_name, description_text;
+-             Complaint[6]    : complaint_id[PRIMARY], complaint_type,id, user_id, complaint_title, complaint_message, status_id;
 
 <ins>*Relationships[] :*</ins>
 
@@ -96,14 +96,14 @@ Their necessity is linked to the user/customer need of writing and sending compl
 
 - ` Store_User <---> User_Role, `
 - ` Cardinality  : Many-to-One (M:1),`
-- ` Participation: Store_User - Total; User_Role - Partial`
+- ` Participation: Store_User - Total; User_Role - Partial;`
 
 **A Store_User** _can have_ **Many User_Roles**,
 **A User_Role** _can be had by_ **Many Users**.
 
 - `  User_Role <---> Role_Permission, `
 - ` Cardinality  :  Many-to-Many (M:N),`
-- ` Participation:  User_Role - Partial; Role_Permission - Total`
+- ` Participation:  User_Role - Partial; Role_Permission - Total;`
 
 **A User_Role** _gets permissions through_ **Many Role_Permission Entities**,
 
@@ -111,7 +111,7 @@ Their necessity is linked to the user/customer need of writing and sending compl
 
 - ` Permission <---> Role_Permission, `
 - ` Cardinality  :  Many-to-Many (M:N),`
-- ` Participation:  Permission - Partial; Role_Permission - Total`
+- ` Participation:  Permission - Partial; Role_Permission - Total;`
 
 **A Permission** _is given to roles through_ **Many Role_Permission Entities**,
 
@@ -122,24 +122,47 @@ Their necessity is linked to the user/customer need of writing and sending compl
 
 **Product-Related:**
 
-- ` Product_Category <---> Catalogue`
-- `       Cardinality  :  Many-to-One (M:1),`
-- `       Participation:  Product_Category - Partial; Catalogue - Total`
+- ` Product_Category <---> Product,`
+- `       Cardinality  :  One-to-Many (1:M),`
+- `       Participation:  Product_Category - Partial; Product - Total;`
 
-**A Product_Category** _categorizes products from_ **Only One Catalogue**,
+**A Product_Category** _categorizes_ **Many Products**,
 
-**The Catalogue** _can have_  **Many Products** _categorized_.
+**A product** _can have_ **Only One Category**.
 
 **IMPORTANT NOTE:** _Catalogue_ is the name of the Entity, but it contains the actual _Products_ which are being sold. Therefore, whichever relationship there is between _Catalogue_ and other Entities has implications for each _Product_ as well.
+ 
+- `   Product <---> Book_Details,`
+- `Cardinality  :  Many-to-One (M:1),`
+- `Participation:  Product - Partial; Book_Details - Total;`
 
-- ` Product_Category <---> Catalogue`
-- `       Cardinality  :  Many-to-One (M:1),`
-- `       Participation:  Product_Category - Partial; Catalogue - Total`
+**A product** _keeps book data into_ **One Entity of Book_Details**,
 
-**A Product_Category** _categorizes products from_ **Only One Catalogue**,
+**A Book_Details Entity** _can be had by_ **Many Products**.
 
-**The Catalogue** _can have_  **Many Products** _categorized_.
+- `   Product <---> Book_Details,`
+- `Cardinality  :  Many-to-One (M:1),`
+- `Participation:  Product - Partial; Book_Details - Total;`
 
+**A product** _keeps book data into_ **One Entity of Book_Details**,
+
+**A Book_Details Entity** _can be had by_ **Many Products**.
+
+- `   Product <---> Book_Details,`
+- `Cardinality  :  Many-to-One (M:1),`
+- `Participation:  Product - Partial; Book_Details - Total;`
+
+**A product** _keeps book data into_ **One Entity of Book_Details**,
+
+**A Book_Details Entity** _can be had by_ **Many Products**.
+
+- `Book_Details <---> Book_Genre,`
+- `  Cardinality  :  Many-to-One (M:1),`
+- `  Participation:  Book_Details - Total; Book_Genre - Partial;`
+
+**A Book_Details Entity** _has_ **One Book_Genre**,
+
+**A Book_Genre** _can be had by_ **Many Book_Details Entities**.
 
 =**Order-Related:**
 
