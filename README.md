@@ -129,25 +129,7 @@ Their necessity is linked to the user/customer need of writing and sending compl
 **A Product_Category** _categorizes_ **Many Products**,
 
 **A product** _can have_ **Only One Category**.
-
-**IMPORTANT NOTE:** _Catalogue_ is the name of the Entity, but it contains the actual _Products_ which are being sold. Therefore, whichever relationship there is between _Catalogue_ and other Entities has implications for each _Product_ as well.
  
-- `   Product <---> Book_Details,`
-- `Cardinality  :  Many-to-One (M:1),`
-- `Participation:  Product - Partial; Book_Details - Total;`
-
-**A product** _keeps book data into_ **One Entity of Book_Details**,
-
-**A Book_Details Entity** _can be had by_ **Many Products**.
-
-- `   Product <---> Book_Details,`
-- `Cardinality  :  Many-to-One (M:1),`
-- `Participation:  Product - Partial; Book_Details - Total;`
-
-**A product** _keeps book data into_ **One Entity of Book_Details**,
-
-**A Book_Details Entity** _can be had by_ **Many Products**.
-
 - `   Product <---> Book_Details,`
 - `Cardinality  :  Many-to-One (M:1),`
 - `Participation:  Product - Partial; Book_Details - Total;`
@@ -164,6 +146,74 @@ Their necessity is linked to the user/customer need of writing and sending compl
 
 **A Book_Genre** _can be had by_ **Many Book_Details Entities**.
 
-=**Order-Related:**
+- `   Product <---> Audio_Details,`
+- `Cardinality  :  Many-to-One (M:1),`
+- `Participation:  Product - Partial; Audio_Details - Total;`
+
+**A Product** _keeps audio data into_ **One Entity of Audio_Details**,
+
+**An Audio_Details Entity** _can be had by_ **Many Products**.
+
+- `Audio_Details <---> Audio_Genre,`
+- `  Cardinality  :  Many-to-One (M:1),`
+- `  Participation:  Audio_Details - Total; Audio_Genre - Partial;`
+
+**An Audio_Details Entity** _has_ **One Audio_Genre**,
+
+**An Audio_Genre** _can be had by_ **Many Audio_Details Entities**.
+
+
+**Order-Related:**
+
+- `Store_Order <---> Ordered_Item,`
+- ` Cardinality  :  Many-to-Many (N:M),`
+- ` Participation:  Store_Order - Partial; Ordered_Item - Total;`
+
+**A Store_Order** _has its order products in_ **Many Ordered_Item Entities**,
+
+**An Ordered_Item Entity** _can have order products for_ **Many Store_Orders**.
+
+- `Store_Order <---> Order_Payment,`
+- ` Cardinality  :  Many-to-One (M:1),`
+- ` Participation:  Store_Order - Total; Order_Payment - Partial;`
+
+**A Store_Order** _is getting paid through_ **One Order_Payment (Method)**,
+
+**An Order_Payment (Method)** _can be used to pay for_ **Many Store_Orders**.
+
+- `Store_Order <---> Order_Status,`
+- ` Cardinality  :  Many-to-Many (M:N),`
+- ` Participation:  Store_Order - Total; Order_Status - Partial;`
+
+**A Store_Order** _has_ **Many Order_Statuses (not at once, but in time)**,
+
+**One Order_Status** _can be had by_ **Many Store_Orders**.
 
 **Complaint-Related:**
+
+- `  Complaint <---> Complaint_Type,`
+- ` Cardinality  :  Many-to-Many (M:1),`
+- ` Participation:  Complaint - Total; Complaint_Type - Partial;`
+
+**A Complaint** _has_ **One Complaint_Type**,
+
+**A Complaint_Type** _can be had by_ **Many Complaints**.
+
+- `  Complaint <---> Complaint_Status`
+- ` Cardinality  :  Many-to-Many (M:N),`
+- ` Participation:  Complaint - Total; Complaint_Status - Partial;`
+
+**A Complaint** _has_ **Many Complaint_Statuses (not at once, but in time)**,
+
+**A Complaint_Status** _can be had by_ **Many Complaints**.
+
+**Relationships that connect sections between themselves**
+
+- `    Product <---> Ordered_Item9`
+- ` Cardinality  :  One-to-Many (M:N),`
+- ` Participation:  Complaint - Total; Complaint_Status - Partial;`
+
+**A Complaint** _has_ **Many Complaint_Statuses (not at once, but in time)**,
+
+**A Complaint_Status** _can be had by_ **Many Complaints**.
+
