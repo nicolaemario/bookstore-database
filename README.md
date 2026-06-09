@@ -166,7 +166,7 @@ Their necessity is linked to the user/customer need of writing and sending compl
 **Order-Related:**
 
 - `Store_Order <---> Ordered_Item,`
-- ` Cardinality  :  One-to-Many` (1:M),`
+- ` Cardinality  :  One-to-Many (1:M),`
 - ` Participation:  Store_Order - Partial; Ordered_Item - Total;`
 
 **A Store_Order** _has its order products in_ **Many Ordered_Item Entities**,
@@ -192,7 +192,7 @@ Their necessity is linked to the user/customer need of writing and sending compl
 **Complaint-Related:**
 
 - `  Complaint <---> Complaint_Type,`
-- ` Cardinality  :  Many-to-Many (M:1),`
+- ` Cardinality  :  Many-to-One (M:1),`
 - ` Participation:  Complaint - Total; Complaint_Type - Partial;`
 
 **A Complaint** _has_ **One Complaint_Type**,
@@ -214,7 +214,7 @@ Their necessity is linked to the user/customer need of writing and sending compl
 - ` Participation:  Product - Partial; Ordered_Item - Total;`
 
 **A Product** _is added into orders through_ **Many Ordered_Item Entities**,
-**An Ordered_Item Entity** _Adds into orders_ **One Product (at a time/in an entry)**.
+**An Ordered_Item Entity** _adds into orders_ **One Product (at a time/in an entry)**.
 
 - `Store_User <---> Store_Order`
 - `Cardinality  :  One-to-Many (1:M),`
