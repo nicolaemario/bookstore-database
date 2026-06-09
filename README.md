@@ -29,7 +29,7 @@ It also features a few queries that are enough for the intention of this project
 
 ## **2. The Entity-Relationship Diagram**
 
-####<ins>*Entities[17] :*</ins>
+<ins>*Entities[17] :*</ins>
 
 **User-Related AND Role-Related:**
   -     User_Role       - **Entity which represents a platform role**
