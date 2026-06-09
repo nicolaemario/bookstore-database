@@ -65,13 +65,13 @@ Their necessity is linked to the user/customer need of writing and sending compl
 
 <ins>*Attributes[66] :*</ins>
 
-**User-Related AND Role-Related:**
+**<ins>User-Related AND Role-Related:</ins>**
 -            Store_User[8]    : user_id[PRIMARY], address(country, state, zip_code, city, street, apt), email;
 -             User_Role[3]    : role_id[PRIMARY], role_name, description_text;
 -            Permission[3]    : permission_id[PRIMARY], permission_name, description_text;
 -       Role_Permission[2]    : role_id [PRIMARY], permission_id[PRIMARY];
 
-**Product-Related:**
+**<ins>Product-Related:</ins>**
 -      Product_Category[2]    : category_id[PRIMARY}, category_name;
 -               Product[6]    : product_id[PRIMARY], product_name, category_id, available_stock, unit_price, weight;
 -            Book_Genre[2]    : book_genre_id[PRIMARY], book_genre_name;
@@ -79,20 +79,20 @@ Their necessity is linked to the user/customer need of writing and sending compl
 -           Audio_Genre[2]    : audio_genre_id[PRIMARY], audio_genre_name;
 -         Audio_Details[7]    : product_id[PRIMARY], artist, audio_genre_id, audio_year, minutes, seconds, tempo;
 
-=**Order-Related:**
+=**<ins>Order-Related:</ins>**
 -         Order_Payment[3]    : payment_type_id[PRIMARY], payment_type, description_text;
 -          Order_Status[3]   : status_id[PRIMARY], status_name, description_text;
 -           Store_Order[5]    : order_date, order_id[PRIMARY], user_id, payment_type_id, status_id;
 -          Ordered_Item[3]    : order_id[PRIMARY], product_id[PRIMARY], quantity; 
 
-**Complaint-Related:**
+**<ins>Complaint-Related:</ins>**
 -        Complaint_Type[3]    : complaint_type_id[PRIMARY], complaint_name, description_text;
 -      Complaint_Status[3]    : status_id[PRIMARY], status_name, description_text;
 -             Complaint[6]    : complaint_id[PRIMARY], complaint_type,id, user_id, complaint_title, complaint_message, status_id;
 
 <ins>*Relationships[] :*</ins>
 
-**User-Related AND Role-Related:**
+**<ins>User-Related AND Role-Related:</ins>**
 
 - ` Store_User <---> User_Role, `
 - ` Cardinality  : Many-to-One (M:1),`
@@ -120,7 +120,7 @@ Their necessity is linked to the user/customer need of writing and sending compl
 
 **IMPORTANT NOTE:** *Role_Permission* is an entity which connects _User_Roles_ with _Permissions_, therefore the relationship between _User Roles_ and _Permissions_ is inferred through the help of this perspective rather than from a direct relationship symbol in the diagram.
 
-**Product-Related:**
+**<ins>Product-Related:</ins>**
 
 - ` Product_Category <---> Product,`
 - `       Cardinality  :  One-to-Many (1:M),`
@@ -163,7 +163,7 @@ Their necessity is linked to the user/customer need of writing and sending compl
 **An Audio_Genre** _can be had by_ **Many Audio_Details Entities**.
 
 
-**Order-Related:**
+**<ins>Order-Related:</ins>**
 
 - `Store_Order <---> Ordered_Item,`
 - ` Cardinality  :  One-to-Many (1:M),`
@@ -189,7 +189,7 @@ Their necessity is linked to the user/customer need of writing and sending compl
 
 **One Order_Status** _can be had by_ **Many Store_Orders**.
 
-**Complaint-Related:**
+**<ins>Complaint-Related:</ins>**
 
 - `  Complaint <---> Complaint_Type,`
 - ` Cardinality  :  Many-to-One (M:1),`
@@ -207,13 +207,14 @@ Their necessity is linked to the user/customer need of writing and sending compl
 
 **A Complaint_Status** _can be had by_ **Many Complaints**.
 
-**Relationships that connect sections between themselves**
+**<ins>Relationships that connect sections between themselves</ins>**
 
 - `    Product <---> Ordered_Item`
 - ` Cardinality  :  One-to-Many (Mq:N),`
 - ` Participation:  Product - Partial; Ordered_Item - Total;`
 
 **A Product** _is added into orders through_ **Many Ordered_Item Entities**,
+
 **An Ordered_Item Entity** _adds into orders_ **One Product (at a time/in an entry)**.
 
 - `Store_User <---> Store_Order`
@@ -221,6 +222,7 @@ Their necessity is linked to the user/customer need of writing and sending compl
 - `Participation:  Store_User - Partial; Store_Order - Partial;`
 
 **A Store_User** _can place_ **Many Store_Orders**,
+
 **A Store_Order** _can be placed by_ **Only One Store_User**.
 
 - `Store_User <---> Complaint`
@@ -228,4 +230,5 @@ Their necessity is linked to the user/customer need of writing and sending compl
 - `Participation:  Store_User - Partial; Complaint - Total;`
 
 **A Store_User** _can place_ **Many Complaints**,
+
 **A Complaint** _can be placed by_ **Only One Store_User**.
