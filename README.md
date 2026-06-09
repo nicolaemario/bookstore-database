@@ -118,7 +118,7 @@ Their necessity is linked to the user/customer need of writing and sending compl
 **A Role_Permission Entity** _can give_ **Many Permissions**.
 
 
-**IMPORTANT NOTE:** *Role_Permission* is an entity which connects _User_Roles_ with _Permissions_, therefore the relationship between _User Roles_ and _Permissions_ is inferred through the help of this perspective.
+**IMPORTANT NOTE:** *Role_Permission* is an entity which connects _User_Roles_ with _Permissions_, therefore the relationship between _User Roles_ and _Permissions_ is inferred through the help of this perspective rather than from a direct relationship symbol in the diagram.
 
 **Product-Related:**
 
@@ -128,15 +128,15 @@ Their necessity is linked to the user/customer need of writing and sending compl
 
 **A Product_Category** _categorizes_ **Many Products**,
 
-**A product** _can have_ **Only One Category**.
+**A Product** _can have_ **Only One Category**.
  
 - `   Product <---> Book_Details,`
-- `Cardinality  :  Many-to-One (M:1),`
+- `Cardinality  :  One-to-One (M:1),`
 - `Participation:  Product - Partial; Book_Details - Total;`
 
-**A product** _keeps book data into_ **One Entity of Book_Details**,
+**A Product** _keeps book data into_ **One Entity of Book_Details**,
 
-**A Book_Details Entity** _can be had by_ **Many Products**.
+**A Book_Details Entity** _can be had by_ **Only One Product**.
 
 - `Book_Details <---> Book_Genre,`
 - `  Cardinality  :  Many-to-One (M:1),`
@@ -147,12 +147,12 @@ Their necessity is linked to the user/customer need of writing and sending compl
 **A Book_Genre** _can be had by_ **Many Book_Details Entities**.
 
 - `   Product <---> Audio_Details,`
-- `Cardinality  :  Many-to-One (M:1),`
+- `Cardinality  :  One-to-One (1:1),`
 - `Participation:  Product - Partial; Audio_Details - Total;`
 
 **A Product** _keeps audio data into_ **One Entity of Audio_Details**,
 
-**An Audio_Details Entity** _can be had by_ **Many Products**.
+**An Audio_Details Entity** _can be had by_ **Only One Product**.
 
 - `Audio_Details <---> Audio_Genre,`
 - `  Cardinality  :  Many-to-One (M:1),`
@@ -166,7 +166,7 @@ Their necessity is linked to the user/customer need of writing and sending compl
 **Order-Related:**
 
 - `Store_Order <---> Ordered_Item,`
-- ` Cardinality  :  Many-to-Many (N:M),`
+- ` Cardinality  :  One-to-Many` (1:M),`
 - ` Participation:  Store_Order - Partial; Ordered_Item - Total;`
 
 **A Store_Order** _has its order products in_ **Many Ordered_Item Entities**,
@@ -210,10 +210,22 @@ Their necessity is linked to the user/customer need of writing and sending compl
 **Relationships that connect sections between themselves**
 
 - `    Product <---> Ordered_Item`
-- ` Cardinality  :  One-to-Many (M:N),`
-- ` Participation:  Complaint - Partial; Complaint_Status - Total;`
+- ` Cardinality  :  One-to-Many (Mq:N),`
+- ` Participation:  Product - Partial; Ordered_Item - Total;`
 
-**A Product** _has_ **Many Ordered_Item Entities**,
->>
-**An Ordered_Item Entity** _can be had by_ ****.
-<<
+**A Product** _is added into orders through_ **Many Ordered_Item Entities**,
+**An Ordered_Item Entity** _Adds into orders_ **One Product (at a time/in an entry)**.
+
+- `Store_User <---> Store_Order`
+- `Cardinality  :  One-to-Many (1:M),`
+- `Participation:  Store_User - Partial; Store_Order - Partial;`
+
+**A Store_User** _can place_ **Many Store_Orders**,
+**A Store_Order** _can be placed by_ **Only One Store_User**.
+
+- `Store_User <---> Complaint`
+- `Cardinality  :  One-to-Many (1:M),`
+- `Participation:  Store_User - Partial; Complaint - Total;`
+
+**A Store_User** _can place_ **Many Complaints**,
+**A Complaint** _can be placed by_ **Only One Store_User**.
