@@ -3,6 +3,7 @@
 ### CONTENTS PAGE
 
 #1. What is the project about?
+
 #2. The Entity-Relationship Diagram
 
 ## **1. What is the project about?**
@@ -98,7 +99,7 @@ Their necessity is linked to the user/customer need of writing and sending compl
 - ` Cardinality  : Many-to-One (M:1),`
 - ` Participation: Store_User - Total; User_Role - Partial;`
 
-**A Store_User** _can have_ **Many User_Roles**,
+**A Store_User** _can have_ **One User_Role**,
 **A User_Role** _can be had by_ **Many Users**.
 
 - `  User_Role <---> Role_Permission, `
@@ -171,7 +172,7 @@ Their necessity is linked to the user/customer need of writing and sending compl
 
 **A Store_Order** _has its order products in_ **Many Ordered_Item Entities**,
 
-**An Ordered_Item Entity** _can have order products for_ **Many Store_Orders**.
+**An Ordered_Item Entity** _can have an order product for_ **Many Store_Orders**.
 
 - `Store_Order <---> Order_Payment,`
 - ` Cardinality  :  Many-to-One (M:1),`
