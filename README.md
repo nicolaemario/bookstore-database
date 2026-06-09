@@ -80,7 +80,7 @@ Their necessity is linked to the user/customer need of writing and sending compl
 -           Audio_Genre[2]    : audio_genre_id[PRIMARY], audio_genre_name;
 -         Audio_Details[7]    : product_id[PRIMARY], artist, audio_genre_id, audio_year, minutes, seconds, tempo;
 
-=**<ins>Order-Related:</ins>**
+**<ins>Order-Related:</ins>**
 -         Order_Payment[3]    : payment_type_id[PRIMARY], payment_type, description_text;
 -          Order_Status[3]   : status_id[PRIMARY], status_name, description_text;
 -           Store_Order[5]    : order_date, order_id[PRIMARY], user_id, payment_type_id, status_id;
