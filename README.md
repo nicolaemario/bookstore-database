@@ -2,6 +2,7 @@
 
 ## **1. What is the project about?**
 
+
 <ins>*Features*</ins>
 
 The project features a database suited for an online book store.
@@ -9,6 +10,7 @@ It contains 3 files:
   - **Entity-Relationship DIAGRAM.png**
   - **book_store.sql**
   - **README.md**
+
 
 <ins>*Every File Explained*</ins>
 
@@ -21,6 +23,12 @@ It also features a few queries that are enough for the intention of this project
 
 **The README.md** file contains the documentation of this project, where every choice that has been made will be explained such that everything will make sense for the reader.
 
+
+<ins>**Used technologies**</ins>
+
+- **Structured Query Language (SQL)**
+- **MySQL DBMS**
+- **MySQL Workbench Interface**
 
 
 ## **2. The Entity-Relationship Diagram**
@@ -283,7 +291,6 @@ The project was implemented through **Structured Query Language (SQL)**, **MySQL
 `Let a High-Scale Potential Table be one that could most likely have over 65535 entries (Bigger than SMALLINT: INT, BIGINT).`
 
 <ins>Low-Scale Potential Tables[9]</ins>
-
 - `User-Role`
 - `Permission`
 - `Product_Category`
@@ -303,15 +310,57 @@ The project was implemented through **Structured Query Language (SQL)**, **MySQL
 - `Ordered_Item`
 - `Complaint`
 
+
 **<ins>Data Type Decisions</ins>**
+
 
 For the **Low-Scale Potential Tables**, these decisions have been taken in regard to Data Types:
 - **TINYINT UNSIGNED (0-255)** implies very few IDs/entries that the tables will have (at PRIMARY KEYS) or columns where values shouldn't be higher than 255.
 - **SMALLINT UNSIGNED(0-65,535)** implies moderate IDs/entries that the tables will have (at PRIMARY KEYS) or columns where values shouldn't be higher than 65535 (or where could be higher than 255).
+
 
 For the **High-Scale Potential Tables**, these decisions have been taken in regard to Data Types:
 - **INT UNSIGNED** (0-4,294,967,295) implies a very scalable table (where many PRIMARY KEY IDs will be added) or big numbers in a column.
 - **BIGINT UNSIGNED** is not used because it is not necessary in our situation.
 
 
+</ins>**Type of Constraints Used**</ins>
+- `PRIMARY KEY[17]`
+- `AUTO_INCREMENT[13]`
+- `NOT NULL[28]`
+- `UNIQUE[11]`
+- `FOREIGN KEY[16]`
+- `DEFAULT[16]`
 
+
+
+**OTHER DETAILS ARE FOUND IN THE ACTUAL SQL CODE ITSELF.**
+
+
+
+## 4. Limitations
+
+
+**<ins>What it doesn't contain<ins>**
+
+- CHECK() constraints
+- Triggers
+- Tables with details for other product categories (like Book_Details or Audio_Details)
+- Use for an actual platform (this is for another type of projects)
+- More advanced queries
+- More in-depth database theoretical analysis (such as FNs or Functional Dependencies)
+
+
+**<ins>Why?</ins>**
+
+This project is not meant to be the most complete work. Instead, it is for implementing actual knowledge that was acquired from studying, watching courses, and reading articles. It is, therefore, a checkpoint in my progress towards becoming a better developer.
+
+
+
+## 5. What I have learned
+
+- **Patience and putting work towards making a more detailed project and documenting it in good detail;**
+- **A better, more complex, simplified in relationships, and well-thought Entity-Relationship Diagram;**
+- **Awareness of the strengths of this project and of what will lack from it at finish;**
+- **Better visual design for the Entity-Relationship Diagram;**
+- **Bug solving.**
