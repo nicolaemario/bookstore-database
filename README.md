@@ -250,33 +250,34 @@ The project was implemented through **Structured Query Language (SQL)**, **MySQL
 - FOREIGN KEYS[16];
 - INSERT VALUES[163].
 
-<ins> Low/High-Scale Potential: DEFINITIONS, TABLES</ins>
+<ins>Low/High-Scale Potential: DEFINITIONS, TABLES</ins>
 
-Let a Low-Scale Potential Table be one that could most likely not have over 65535 entries (SMALLINT Maximum Integer Value),
+`Let a Low-Scale Potential Table be one that could most likely not have over 65535 entries (SMALLINT Maximum Integer Value).`
 
-Let a High-Scale Potential Table be one that could most likely have over 65535 entries (Bigger than SMALLINT: INT, BIGINT).
+`Let a High-Scale Potential Table be one that could most likely have over 65535 entries (Bigger than SMALLINT: INT, BIGINT).`
 
-Low-Scale Potential Tables[9]:
-- **User-Role**
-- **Permission**
-- **Product_Category**
-- **Book_Genre**
-- **Audio_Genre**
-- **Order_Payment**
-- **Order_Status**
-- **Complaint_Status**
-- **Complaint_Type**
+<ins>Low-Scale Potential Tables[9]</ins>
+
+- `User-Role`
+- `Permission`
+- `Product_Category`
+- `Book_Genre`
+- `Audio_Genre`
+- `Order_Payment`
+- `Order_Status`
+- `Complaint_Status`
+- `Complaint_Type`
   
-High-Scale Potential Tables[6]:
-- **Store_User**
-- **Catalogue**
-- **Book_Details**
-- **Audio_Details**
-- **Store_Order**
-- **Ordered_Item**
-- **Complaint**
+<ins>High-Scale Potential Tables[6]:</ins>
+- `Store_User`
+- `Catalogue`
+- `Book_Details`
+- `Audio_Details`
+- `Store_Order`
+- `Ordered_Item`
+- `Complaint`
 
-<ins>Data Type Decisions</ins>
+**<ins>Data Type Decisions</ins>**
 
 For the **Low-Scale Potential Tables**, these decisions have been taken in regard to Data Types:
 - **TINYINT UNSIGNED (0-255)** implies very few IDs/entries that the tables will have (at PRIMARY KEYS) or columns where values shouldn't be higher than 255.
@@ -285,3 +286,6 @@ For the **Low-Scale Potential Tables**, these decisions have been taken in regar
 For the **High-Scale Potential Tables**, these decisions have been taken in regard to Data Types:
 - **INT UNSIGNED** (0-4,294,967,295) implies a very scalable table (where many PRIMARY KEY IDs will be added) or big numbers in a column.
 - **BIGINT UNSIGNED** is not used because it is not necessary in our situation.
+
+
+
