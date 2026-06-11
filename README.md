@@ -58,7 +58,7 @@ Their necessity is linked to the need of being able to *store specific products,
 Their necessity is linked to the need of being able to *add payment methods, order statuses, orders placed by users, and items included in specific orders*.
 
 **Complaint-Related:**
--       Complaint_Type    - **Entity which represents types of complains tailored for user problems**
+-       Complaint_Type    - **Entity which represents types of complaints tailored for user problems**
 -       Complaint_Status  - **Entity which represents types of statuses that complaints go through before or after being answered**
 -       Complaint         - **Entity which represents a complaint made by a user**
 
@@ -89,9 +89,9 @@ Their necessity is linked to the user/customer need of writing and sending compl
 **<ins>Complaint-Related:</ins>**
 -        Complaint_Type[3]    : complaint_type_id[PRIMARY], complaint_name, description_text;
 -      Complaint_Status[3]    : status_id[PRIMARY], status_name, description_text;
--             Complaint[6]    : complaint_id[PRIMARY], complaint_type,id, user_id, complaint_title, complaint_message, status_id;
+-             Complaint[6]    : complaint_id[PRIMARY], complaint_type_id, user_id, complaint_title, complaint_message, status_id;
 
-<ins>*Relationships[] :*</ins>
+<ins>*Relationships[16] :*</ins>
 
 **<ins>User-Related AND Role-Related:</ins>**
 
@@ -233,3 +233,7 @@ Their necessity is linked to the user/customer need of writing and sending compl
 **A Store_User** _can place_ **Many Complaints**,
 
 **A Complaint** _can be placed by_ **Only One Store_User**.
+
+
+## **3. The SQL Implementation**
+
