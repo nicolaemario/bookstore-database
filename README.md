@@ -251,7 +251,9 @@ The project was implemented through **Structured Query Language (SQL)**, **MySQL
 - INSERT VALUES[163].
 
 <ins> Low/High-Scale Potential: DEFINITIONS, TABLES</ins>
+
 Let a Low-Scale Potential Table be one that could most likely not have over 65535 entries (SMALLINT Maximum Integer Value),
+
 Let a High-Scale Potential Table be one that could most likely have over 65535 entries (Bigger than SMALLINT: INT, BIGINT).
 
 Low-Scale Potential Tables[9]:
