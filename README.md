@@ -277,3 +277,11 @@ High-Scale Potential Tables[6]:
 - **Complaint**
 
 <ins>Data Type Decisions</ins>
+
+For the **Low-Scale Potential Tables**, these decisions have been taken in regard to Data Types:
+- **TINYINT UNSIGNED (0-255)** implies very few IDs/entries that the tables will have (at PRIMARY KEYS) or columns where values shouldn't be higher than 255.
+- **SMALLINT UNSIGNED(0-65,535)** implies moderate IDs/entries that the tables will have (at PRIMARY KEYS) or columns where values shouldn't be higher than 65535 (or where could be higher than 255).
+
+For the **High-Scale Potential Tables**, these decisions have been taken in regard to Data Types:
+- **INT UNSIGNED** (0-4,294,967,295) implies a very scalable table (where many PRIMARY KEY IDs will be added) or big numbers in a column.
+- **BIGINT UNSIGNED** is not used because it is not necessary in our situation.
