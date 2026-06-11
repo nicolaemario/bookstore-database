@@ -91,7 +91,7 @@ Their necessity is linked to the user/customer need of writing and sending compl
 -      Complaint_Status[3]    : status_id[PRIMARY], status_name, description_text;
 -             Complaint[6]    : complaint_id[PRIMARY], complaint_type_id, user_id, complaint_title, complaint_message, status_id;
 
-<ins>*Relationships[16] :*</ins>
+<ins>*Relationships[15] :*</ins>
 
 **<ins>User-Related AND Role-Related:</ins>**
 
@@ -236,4 +236,21 @@ Their necessity is linked to the user/customer need of writing and sending compl
 
 
 ## **3. The SQL Implementation**
+
+The project was implemented through **Structured Query Language (SQL)**, **MySQL DataBase Management System (DBMS)**, and **MySQL Workbench** as an interface for **MySQL DBMS**.
+
+<ins>Relevant Info</ins>
+- Every Entity was granted a table [17];
+- Every Attribute was granted a column in their correct table [66];
+- Every Relationship was accurately implemented from ER to describe the ecosystem of connections between entities [15];
+- The dependent (on other entities) or independent (from other entities) existence of an entity is accurately implemented.
+
+<ins>Relevant Statistics</ins>  
+- PRIMARY KEYS[17] _( **14** Simple Primary Keys **2** Composed Primary Keys)_;
+- FOREIGN KEYS[16];
+- INSERT VALUES [163].
+
+<ins>Data Type Decisions</ins>
+
+
 
