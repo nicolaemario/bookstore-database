@@ -106,7 +106,7 @@ Their necessity is linked to the user/customer need of writing and sending compl
 
 
 
-<ins>**Relationships[15]**</ins>
+<ins>**Relationships[16]**</ins>
 
 **<ins>User-Related AND Role-Related:</ins>**
 
@@ -276,11 +276,11 @@ The project was implemented through **Structured Query Language (SQL)**, **MySQL
 <ins>Relevant Info</ins>
 - Every Entity was granted a table [17];
 - Every Attribute was granted a column in their correct table [66];
-- Every Relationship was accurately implemented from ER to describe the ecosystem of connections between entities [15];
+- Every Relationship was accurately implemented from ER to describe the ecosystem of connections between entities [16];
 - The dependent (on other entities) or independent (from other entities) existence of an entity is accurately implemented.
 
 <ins>Relevant Statistics</ins>  
-- PRIMARY KEYS[17] _( **14** Simple Primary Keys **2** Composed Primary Keys)_;
+- PRIMARY KEYS[17] _( **15** Simple Primary Keys **2** Composed Primary Keys)_;
 - FOREIGN KEYS[16];
 - INSERT VALUES[163].
 
@@ -301,7 +301,7 @@ The project was implemented through **Structured Query Language (SQL)**, **MySQL
 - `Complaint_Status`
 - `Complaint_Type`
   
-<ins>High-Scale Potential Tables[6]:</ins>
+<ins>High-Scale Potential Tables[7]:</ins>
 - `Store_User`
 - `Catalogue`
 - `Book_Details`
@@ -363,4 +363,5 @@ This project is not meant to be the most complete work. Instead, it is for imple
 - **A better, more complex, simplified in relationships, and well-thought Entity-Relationship Diagram;**
 - **Awareness of the strengths of this project and of what will lack from it at finish;**
 - **Better visual design for the Entity-Relationship Diagram;**
-- **Bug solving.**
+- **Identifying and fixing database design issues**
+- **Referential Integrity**
